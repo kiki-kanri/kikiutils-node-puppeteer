@@ -1,9 +1,15 @@
 {
   "name": "kikiutils-node-puppeteer",
   "version": "1.0.0",
-  "description": "Base or utils class and functions for puppeteer.",
-  "main": "index.js",
-  "scripts": {},
+  "description": "Base or utils classes and functions for puppeteer.",
+  "main": "lib/index.js",
+  "type": "commonjs",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kiki-kanri/kikiutils-node-puppeteer.git"
