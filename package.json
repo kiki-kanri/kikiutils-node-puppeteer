@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Base or utils class and functions for puppeteer.",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kiki-kanri/kikiutils-node-puppeteer.git"
@@ -17,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/kiki-kanri/kikiutils-node-puppeteer/issues"
   },
-  "homepage": "https://github.com/kiki-kanri/kikiutils-node-puppeteer#readme"
+  "homepage": "https://github.com/kiki-kanri/kikiutils-node-puppeteer#readme",
+  "dependencies": {
+    "puppeteer": "^19.7.1",
+    "puppeteer-extra": "^3.3.4",
+    "puppeteer-extra-plugin-stealth": "^2.11.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
 }
