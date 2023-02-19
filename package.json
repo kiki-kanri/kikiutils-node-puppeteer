@@ -1,0 +1,21 @@
+{
+  "name": "kikiutils-node-puppeteer",
+  "version": "1.0.0",
+  "description": "Base or utils class and functions for puppeteer.",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiki-kanri/kikiutils-node-puppeteer.git"
+  },
+  "keywords": [
+    "puppeteer"
+  ],
+  "author": "kiki-kanri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kiki-kanri/kikiutils-node-puppeteer/issues"
+  },
+  "homepage": "https://github.com/kiki-kanri/kikiutils-node-puppeteer#readme"
+}
