@@ -50,13 +50,7 @@ export default class PuppeteerBrowser {
 	 */
 	async getPageByIndex(index: number, cookieFileName: string = '') {
 		const page = (await this.b.pages())[index];
-
-		for (const pageName in this.pages) {
-			if (this.pages[pageName].p.url() === page.url()) {
-				return this.pages[pageName];
-			}
-		}
-
+		for (const pageName in this.pages) if (this.pages[pageName].p.url() === page.url()) return this.pages[pageName];
 		const newPageName = this.getNewPageName();
 		return this.addPage(page, cookieFileName, newPageName);
 	}
@@ -64,12 +58,7 @@ export default class PuppeteerBrowser {
 	/**
 	 * Get new page.
 	 */
-	async newPage(
-		url: string = '',
-		cookieFileName: string = '',
-		name: string = '',
-		gotoOptions: WaitForOptions = {}
-	) {
+	async newPage(url: string = '', cookieFileName: string = '', name: string = '', gotoOptions: WaitForOptions = {}) {
 		if (!name) {
 			name = this.getNewPageName();
 		} else if (this.pages[name]) {
@@ -77,10 +66,7 @@ export default class PuppeteerBrowser {
 		}
 
 		const page = await this.b.newPage();
-		await page.setExtraHTTPHeaders({
-			'Accept-Language': 'zh-TW'
-		});
-
+		await page.setExtraHTTPHeaders({ 'Accept-Language': 'zh-TW' });
 		if (url) await page.goto(url, gotoOptions);
 		return this.addPage(page, cookieFileName, name);
 	}

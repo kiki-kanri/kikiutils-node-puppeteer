@@ -8,12 +8,7 @@ export default class PuppeteerBrowserPage {
 	name: string;
 	p: Page;
 
-	constructor(
-		page: Page,
-		cookieFileName: string,
-		name: string,
-		browser: PuppeteerBrowser
-	) {
+	constructor(page: Page, cookieFileName: string, name: string, browser: PuppeteerBrowser) {
 		this.b = browser;
 		this.cookieFileName = cookieFileName;
 		this.name = name;
