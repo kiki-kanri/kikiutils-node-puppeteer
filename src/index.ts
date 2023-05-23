@@ -43,7 +43,7 @@ export const getPuppeteerBrowser = async (extraOptions: PuppeteerLaunchOptions =
 		delete extraOptions.args;
 	}
 
-	const browser = await puppeteer.launch({...options, ...extraOptions});
+	const browser = await puppeteer.launch({ ...options, ...extraOptions });
 	const puppeteerBrowser = new PuppeteerBrowser(browser);
 	await (await browser.pages())[0].setExtraHTTPHeaders({
 		'Accept-Language': 'zh-TW'
