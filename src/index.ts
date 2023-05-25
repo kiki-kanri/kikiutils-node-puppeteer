@@ -5,7 +5,11 @@ import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import PuppeteerBrowser from './browser';
 
 interface ExtraOptions extends PuppeteerLaunchOptions {
-	userAgent?: string;
+	/**
+	 * Default browser user agent, set null will not set.
+	 * @defaultValue `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36`
+	 */
+	userAgent?: null | string;
 }
 
 puppeteer.use(StealthPlugin());
@@ -15,7 +19,7 @@ const defaultOptions: ExtraOptions = {
 
 export const getPuppeteerBrowser = async (extraOptions?: ExtraOptions, replaceArgs: boolean = false) => {
 	if (!extraOptions) extraOptions = { ...defaultOptions };
-	if (!extraOptions.userAgent) extraOptions.userAgent = defaultOptions.userAgent;
+	if (extraOptions.userAgent === undefined) extraOptions.userAgent = defaultOptions.userAgent;
 	const options: PuppeteerLaunchOptions = {
 		args: [
 			'--arc-disable-app-sync',
@@ -51,8 +55,9 @@ export const getPuppeteerBrowser = async (extraOptions?: ExtraOptions, replaceAr
 		delete extraOptions.args;
 	}
 
-	options.args?.push(`--user-agent=${extraOptions.userAgent}`);
+	if (extraOptions.userAgent) options.args?.push(`--user-agent=${extraOptions.userAgent}`);
 	delete extraOptions.userAgent;
+	if (options.args) options.args = [...new Set(options.args)];
 	const browser = await puppeteer.launch({ ...options, ...extraOptions });
 	const puppeteerBrowser = new PuppeteerBrowser(browser);
 	const firstPage = (await browser.pages())[0];
