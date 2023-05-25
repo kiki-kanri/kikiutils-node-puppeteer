@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/kiki-kanri/kikiutils-node-puppeteer#readme",
   "dependencies": {
-    "puppeteer": "^20.3.0",
+    "puppeteer": "^20.4.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
     "short-uuid": "^4.2.2"
