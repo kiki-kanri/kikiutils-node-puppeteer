@@ -16,7 +16,6 @@ export default class PuppeteerBrowserPage {
 		this.cookieFileName = cookieFileName;
 		this.name = name;
 		this.p = page;
-		this.createCursor();
 	}
 
 	async close(saveCookies: boolean = false) {
@@ -24,13 +23,13 @@ export default class PuppeteerBrowserPage {
 		delete this.b.pages[this.name];
 	}
 
-	createCursor(start?: Vector, setDefaultViewport: boolean = true) {
-		let viewport = this.p.viewport();
-		if (!viewport && setDefaultViewport) viewport = { height: 1080, width: 1920 };
-		if (!start && viewport) {
+	async createCursor(start?: Vector, setDefaultViewport: boolean = true) {
+		const height = await this.p.evaluate('window.innerHeight') as number;
+		const width = await this.p.evaluate('window.innerWidth') as number;
+		if (!start) {
 			start = {
-				x: Math.random() * viewport.width,
-				y: Math.random() * viewport.height
+				x: Math.random() > 0.5 ? 0 : width,
+				y: Math.random() * height
 			};
 		}
 
