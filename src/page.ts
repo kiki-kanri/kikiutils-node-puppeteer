@@ -23,16 +23,22 @@ export default class PuppeteerBrowserPage {
 		delete this.b.pages[this.name];
 	}
 
-	async createCursor(start?: Vector, setDefaultViewport: boolean = true) {
-		const height = await this.p.evaluate('window.innerHeight') as number;
-		const width = await this.p.evaluate('window.innerWidth') as number;
+	async createCursor(start?: Vector) {
 		if (!start) {
 			start = {
-				x: Math.random() > 0.5 ? 0 : width,
-				y: Math.random() * height
+				x: Math.random() > 0.5 ? 0 : await this.getInnerWidth(),
+				y: Math.random() * await this.getInnerHeight()
 			};
 		}
 
 		this.cursor = createCursor(this.p, start);
+	}
+
+	async getInnerHeight() {
+		return await this.p.evaluate('window.innerHeight') as number;
+	}
+
+	async getInnerWidth() {
+		return await this.p.evaluate('window.innerWidth') as number;
 	}
 }
