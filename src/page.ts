@@ -1,4 +1,5 @@
 import { createCursor, GhostCursor } from 'ghost-cursor';
+import { Vector } from 'ghost-cursor/lib/math';
 import { Page } from 'puppeteer';
 
 import PuppeteerBrowser from './browser';
@@ -23,7 +24,16 @@ export default class PuppeteerBrowserPage {
 		delete this.b.pages[this.name];
 	}
 
-	createCursor() {
-		this.cursor = createCursor(this.p);
+	createCursor(start?: Vector, setDefaultViewport: boolean = true) {
+		let viewport = this.p.viewport();
+		if (!viewport && setDefaultViewport) viewport = { height: 1080, width: 1920 };
+		if (!start && viewport) {
+			start = {
+				x: Math.random() * viewport.width,
+				y: Math.random() * viewport.height
+			};
+		}
+
+		this.cursor = createCursor(this.p, start);
 	}
 }
