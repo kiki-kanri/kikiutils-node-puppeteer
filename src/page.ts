@@ -4,41 +4,37 @@ import { Page } from 'puppeteer';
 
 import PuppeteerBrowser from './browser';
 
-export default class PuppeteerBrowserPage {
+export interface PuppeteerPage extends Page {
 	b: PuppeteerBrowser;
-	cookieFileName: string;
-	cursor!: GhostCursor;
-	name: string;
-	p: Page;
+	cursor: GhostCursor;
+	createCursor: (start?: Vector) => Promise<void>;
+	getInnerHeight: () => Promise<number>;
+	getInnerWidth: () => Promise<number>;
+}
 
-	constructor(page: Page, cookieFileName: string, name: string, browser: PuppeteerBrowser) {
-		this.b = browser;
-		this.cookieFileName = cookieFileName;
-		this.name = name;
-		this.p = page;
-	}
+export const newPuppeteerPage = async (browser: PuppeteerBrowser, page: Page) => {
+	const funcs = {
+		async createCursor(start?: Vector) {
+			if (!start) {
+				start = {
+					x: Math.random() > 0.5 ? 0 : await this.getInnerWidth(),
+					y: Math.random() * await this.getInnerHeight()
+				};
+			}
 
-	async close(saveCookies: boolean = false) {
-		await this.p.close();
-		delete this.b.pages[this.name];
-	}
-
-	async createCursor(start?: Vector) {
-		if (!start) {
-			start = {
-				x: Math.random() > 0.5 ? 0 : await this.getInnerWidth(),
-				y: Math.random() * await this.getInnerHeight()
-			};
+			return createCursor(page, start);
+		},
+		async getInnerHeight() {
+			return await page.evaluate('window.innerHeight') as number;
+		},
+		async getInnerWidth() {
+			return await page.evaluate('window.innerWidth') as number;
 		}
+	};
 
-		this.cursor = createCursor(this.p, start);
-	}
-
-	async getInnerHeight() {
-		return await this.p.evaluate('window.innerHeight') as number;
-	}
-
-	async getInnerWidth() {
-		return await this.p.evaluate('window.innerWidth') as number;
-	}
+	const puppeteerPage = page as PuppeteerPage;
+	puppeteerPage.b = browser;
+	puppeteerPage.cursor = await funcs.createCursor();
+	Object.assign(puppeteerPage, funcs);
+	return puppeteerPage;
 }

@@ -65,6 +65,5 @@ export const getPuppeteerBrowser = async (extraOptions?: ExtraOptions, replaceAr
 	return puppeteerBrowser;
 }
 
-export { PuppeteerBrowser }
-export { default as PuppeteerBrowserPage } from './page';
-export * from './utils';
+export { PuppeteerBrowser };
+export { PuppeteerPage } from './page';
