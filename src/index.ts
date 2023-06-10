@@ -7,14 +7,17 @@ import PuppeteerBrowser from './browser';
 interface ExtraOptions extends PuppeteerLaunchOptions {
 	/**
 	 * Default browser user agent, set null will not set.
-	 * @defaultValue `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36`
+	 * @defaultValue `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36`
 	 */
 	userAgent?: null | string;
 }
 
-puppeteer.use(StealthPlugin());
+const stealthPlugin = StealthPlugin();
+stealthPlugin.enabledEvasions.delete('navigator.languages');
+stealthPlugin.enabledEvasions.delete('user-agent-override');
+puppeteer.use(stealthPlugin);
 const defaultOptions: ExtraOptions = {
-	userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
+	userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
 };
 
 export const getPuppeteerBrowser = async (extraOptions?: ExtraOptions, replaceArgs: boolean = false) => {
