@@ -8,8 +8,8 @@ export interface PuppeteerPage extends Page {
 	b: PuppeteerBrowser;
 	cursor: GhostCursor;
 	createCursor: (start?: Vector) => Promise<void>;
-	getInnerHeight: () => Promise<number>;
-	getInnerWidth: () => Promise<number>;
+	getViewHeight: () => Promise<number>;
+	getViewWidth: () => Promise<number>;
 }
 
 export const newPuppeteerPage = async (browser: PuppeteerBrowser, page: Page) => {
@@ -17,18 +17,18 @@ export const newPuppeteerPage = async (browser: PuppeteerBrowser, page: Page) =>
 		async createCursor(start?: Vector) {
 			if (!start) {
 				start = {
-					x: Math.random() > 0.5 ? 0 : await this.getInnerWidth(),
-					y: Math.random() * await this.getInnerHeight()
+					x: Math.random() > 0.5 ? 0 : await this.getViewWidth(),
+					y: Math.random() * await this.getViewHeight()
 				};
 			}
 
 			return createCursor(page, start);
 		},
-		async getInnerHeight() {
-			return await page.evaluate('window.innerHeight') as number;
+		async getViewHeight() {
+			return page.viewport()?.height || await page.evaluate('window.innerHeight') as number;
 		},
-		async getInnerWidth() {
-			return await page.evaluate('window.innerWidth') as number;
+		async getViewWidth() {
+			return page.viewport()?.width || await page.evaluate('window.innerWidth') as number;
 		}
 	};
 
