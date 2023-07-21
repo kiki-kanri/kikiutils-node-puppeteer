@@ -13,8 +13,13 @@ interface ExtraOptions extends PuppeteerLaunchOptions {
 }
 
 const stealthPlugin = StealthPlugin();
-// stealthPlugin.enabledEvasions.delete('navigator.languages');
-// stealthPlugin.enabledEvasions.delete('user-agent-override');
+
+// Remove evasions when platform is windows.
+if (process.platform === 'win32') {
+	stealthPlugin.enabledEvasions.delete('navigator.languages');
+	stealthPlugin.enabledEvasions.delete('user-agent-override');
+}
+
 puppeteer.use(stealthPlugin);
 const defaultOptions: ExtraOptions = {
 	userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
