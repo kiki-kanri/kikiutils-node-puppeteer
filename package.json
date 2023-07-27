@@ -1,6 +1,6 @@
 {
   "name": "kikiutils-node-puppeteer",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Base or utils classes and functions for puppeteer.",
   "main": "lib/index.js",
   "type": "commonjs",
