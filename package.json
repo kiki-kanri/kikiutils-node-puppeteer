@@ -25,7 +25,7 @@
   "homepage": "https://github.com/kiki-kanri/kikiutils-node-puppeteer#readme",
   "dependencies": {
     "ghost-cursor": "^1.1.18",
-    "puppeteer": "^20.9.0",
+    "puppeteer": "^21.0.1",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2"
   },
