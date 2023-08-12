@@ -1,6 +1,6 @@
 {
   "name": "kikiutils-node-puppeteer",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "Base or utils classes and functions for puppeteer.",
   "main": "lib/index.js",
   "type": "commonjs",
@@ -25,7 +25,7 @@
   "homepage": "https://github.com/kiki-kanri/kikiutils-node-puppeteer#readme",
   "dependencies": {
     "ghost-cursor": "^1.1.19",
-    "puppeteer": "^21.0.2",
+    "puppeteer": "^21.0.3",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2"
   },
