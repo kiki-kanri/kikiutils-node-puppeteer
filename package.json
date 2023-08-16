@@ -1,6 +1,6 @@
 {
-  "name": "kikiutils-node-puppeteer",
-  "version": "2.1.1",
+  "name": "@kikiutils/puppeteer",
+  "version": "1.0.0",
   "description": "Base or utils classes and functions for puppeteer.",
   "license": "MIT",
   "author": {
@@ -32,6 +32,9 @@
     "typescript": "^5.1.6"
   },
   "keywords": [
+    "automation",
+    "chrome",
+    "headless",
     "puppeteer"
   ]
 }
