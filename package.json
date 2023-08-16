@@ -1,9 +1,11 @@
 {
   "name": "kikiutils-node-puppeteer",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Base or utils classes and functions for puppeteer.",
   "license": "MIT",
-  "author": "kiki-kanri",
+  "author": {
+    "name": "kiki-kanri"
+  },
   "homepage": "https://github.com/kiki-kanri/kikiutils-node-puppeteer#readme",
   "repository": {
     "type": "git",
@@ -18,7 +20,7 @@
     "./lib/**/*"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "rm -rf ./lib && tsc"
   },
   "dependencies": {
     "ghost-cursor": "^1.1.19",
