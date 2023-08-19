@@ -2,7 +2,7 @@ import { Browser, WaitForOptions } from 'puppeteer';
 
 import { newPuppeteerPage } from './page';
 
-export default class PuppeteerBrowser {
+export class PuppeteerBrowser {
 	b: Browser;
 
 	constructor(browser: Browser) {
@@ -26,3 +26,5 @@ export default class PuppeteerBrowser {
 		return await newPuppeteerPage(this, page);
 	}
 }
+
+export default PuppeteerBrowser;

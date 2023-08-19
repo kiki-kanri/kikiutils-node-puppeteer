@@ -1,16 +1,9 @@
-import { createCursor, GhostCursor } from 'ghost-cursor';
+import { createCursor } from 'ghost-cursor';
 import { Vector } from 'ghost-cursor/lib/math';
 import { Page } from 'puppeteer';
 
 import PuppeteerBrowser from './browser';
-
-export interface PuppeteerPage extends Page {
-	b: PuppeteerBrowser;
-	cursor: GhostCursor;
-	createCursor: (start?: Vector) => Promise<void>;
-	getViewHeight: () => Promise<number>;
-	getViewWidth: () => Promise<number>;
-}
+import { PuppeteerPage } from './types';
 
 export const newPuppeteerPage = async (browser: PuppeteerBrowser, page: Page) => {
 	const funcs = {
