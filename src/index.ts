@@ -1,5 +1,6 @@
 import { executablePath, PuppeteerLaunchOptions } from 'puppeteer';
 import puppeteer from 'puppeteer-extra';
+import { PuppeteerExtraPlugin } from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 
 import PuppeteerBrowser from './browser';
@@ -20,13 +21,12 @@ if (process.platform === 'win32') {
 	stealthPlugin.enabledEvasions.delete('user-agent-override');
 }
 
-puppeteer.use(stealthPlugin);
+puppeteer.use(stealthPlugin as unknown as PuppeteerExtraPlugin);
 const defaultOptions: ExtraOptions = {
 	userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
 };
 
-export const getPuppeteerBrowser = async (extraOptions?: ExtraOptions, replaceArgs: boolean = false) => {
-	if (!extraOptions) extraOptions = { ...defaultOptions };
+export const getPuppeteerBrowser = async (extraOptions: ExtraOptions = { ...defaultOptions }, replaceArgs: boolean = false) => {
 	if (extraOptions.userAgent === undefined) extraOptions.userAgent = defaultOptions.userAgent;
 	const options: PuppeteerLaunchOptions = {
 		args: [
@@ -74,4 +74,4 @@ export const getPuppeteerBrowser = async (extraOptions?: ExtraOptions, replaceAr
 }
 
 export { PuppeteerBrowser };
-export { PuppeteerPage } from './page';
+// export { PuppeteerPage } from './page';
