@@ -20,7 +20,7 @@
     "./dist/**/*"
   ],
   "scripts": {
-    "build": "rm -rf ./dist && pkgroll --minify --target=node16.3"
+    "build": "rm -rf ./dist && pkgroll --target=node16.3"
   },
   "types": "./dist/index.d.ts",
   "dependencies": {
