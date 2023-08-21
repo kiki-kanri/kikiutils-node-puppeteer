@@ -7,7 +7,7 @@ import PuppeteerBrowser from './browser';
 export interface ExtraOptions extends PuppeteerLaunchOptions {
 	/**
 	 * Default browser user agent, set null will not set.
-	 * @defaultValue `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36`
+	 * @defaultValue `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36`
 	 */
 	userAgent?: null | string;
 }
