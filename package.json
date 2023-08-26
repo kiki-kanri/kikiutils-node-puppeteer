@@ -1,6 +1,6 @@
 {
   "name": "@kikiutils/puppeteer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Base or utils classes and functions for puppeteer.",
   "license": "MIT",
   "author": {
