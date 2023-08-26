@@ -1,7 +1,7 @@
-# kikiutils-node-puppeteer
+# @kikiutils/puppeteer
 
 For node puppeteer base or utils classes and functions.
 
-**Note: Some methods and functions may change significantly in the future.**
+**Detailed documentation will be added in future releases.**
 
-**A full readme is expected to be completed after stabilization.**
+**There may be major changes in the future.**
