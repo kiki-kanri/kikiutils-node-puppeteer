@@ -24,14 +24,14 @@
   },
   "dependencies": {
     "ghost-cursor": "^1.1.19",
-    "puppeteer": "^21.1.0",
+    "puppeteer": "^21.1.1",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2"
   },
   "devDependencies": {
     "@kikiutils/tsconfigs": "^0.2.1",
     "@types/node": "^20.5.7",
-    "ts-project-builder": "^0.6.1",
+    "ts-project-builder": "^0.7.0",
     "typescript": "^5.2.2"
   },
   "keywords": [
