@@ -26,8 +26,8 @@ devDependencies:
     specifier: ^20.5.7
     version: 20.5.7
   ts-project-builder:
-    specifier: ^0.9.0
-    version: 0.9.1(esbuild@0.19.2)
+    specifier: ^1.0.0
+    version: 1.0.1(esbuild@0.19.2)
   typescript:
     specifier: ^5.2.2
     version: 5.2.2
@@ -282,7 +282,7 @@ packages:
       - supports-color
     dev: false
 
-  /@rollup/plugin-json@6.0.0(rollup@3.28.1):
+  /@rollup/plugin-json@6.0.0(rollup@3.29.1):
     resolution: {integrity: sha512-i/4C5Jrdr1XUarRhVu27EEwjt4GObltD7c+MkCIpO2QIbojw8MUs+CCTqOphQi3Qtg1FLmYt+l+6YeoIf51J7w==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -291,11 +291,11 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.4(rollup@3.28.1)
-      rollup: 3.28.1
+      '@rollup/pluginutils': 5.0.4(rollup@3.29.1)
+      rollup: 3.29.1
     dev: true
 
-  /@rollup/plugin-strip@3.0.2(rollup@3.28.1):
+  /@rollup/plugin-strip@3.0.2(rollup@3.29.1):
     resolution: {integrity: sha512-L8Whin/DB5XsLE586+xcud6yX/pMVUlfalA999uAsC+dtwmBHSiUwtAxMl3eVvykX3N5BhdeAjStqDlzMmfUXw==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -304,13 +304,13 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.4(rollup@3.28.1)
+      '@rollup/pluginutils': 5.0.4(rollup@3.29.1)
       estree-walker: 2.0.2
       magic-string: 0.27.0
-      rollup: 3.28.1
+      rollup: 3.29.1
     dev: true
 
-  /@rollup/pluginutils@5.0.4(rollup@3.28.1):
+  /@rollup/pluginutils@5.0.4(rollup@3.29.1):
     resolution: {integrity: sha512-0KJnIoRI8A+a1dqOYLxH8vBf8bphDmty5QvIm2hqm7oFCFYKCAZWWd2hXgMibaPsNDhI0AtpYfQZJG47pt/k4g==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -322,7 +322,7 @@ packages:
       '@types/estree': 1.0.1
       estree-walker: 2.0.2
       picomatch: 2.3.1
-      rollup: 3.28.1
+      rollup: 3.29.1
     dev: true
 
   /@tootallnate/quickjs-emscripten@0.23.0:
@@ -1379,35 +1379,35 @@ packages:
       glob: 7.2.3
     dev: false
 
-  /rollup-plugin-esbuild@5.0.0(esbuild@0.19.2)(rollup@3.28.1):
+  /rollup-plugin-esbuild@5.0.0(esbuild@0.19.2)(rollup@3.29.1):
     resolution: {integrity: sha512-1cRIOHAPh8WQgdQQyyvFdeOdxuiyk+zB5zJ5+YOwrZP4cJ0MT3Fs48pQxrZeyZHcn+klFherytILVfE4aYrneg==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     peerDependencies:
       esbuild: '>=0.10.1'
       rollup: ^1.20.0 || ^2.0.0 || ^3.0.0
     dependencies:
-      '@rollup/pluginutils': 5.0.4(rollup@3.28.1)
+      '@rollup/pluginutils': 5.0.4(rollup@3.29.1)
       debug: 4.3.4
       es-module-lexer: 1.3.0
       esbuild: 0.19.2
       joycon: 3.1.1
       jsonc-parser: 3.2.0
-      rollup: 3.28.1
+      rollup: 3.29.1
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /rollup-plugin-node-externals@6.1.1(rollup@3.28.1):
+  /rollup-plugin-node-externals@6.1.1(rollup@3.29.1):
     resolution: {integrity: sha512-127OFMkpH5rBVlRHRBDUMk1m1sGuzbGy7so5aj/IkpUb2r3+wOWjR/erUzd2ChEQWPsxsyQG6xpYYvPBAdcBRA==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       rollup: ^3.0.0
     dependencies:
-      rollup: 3.28.1
+      rollup: 3.29.1
     dev: true
 
-  /rollup-plugin-ts@3.4.4(rollup@3.28.1)(typescript@5.2.2):
-    resolution: {integrity: sha512-xgHn5o/1GD222EWxmMQYiWR00oEClv86O5fiEiIVtcaGXV2yWMn6x6jr082A/xmxu3CcdXiTUHomi/9FXTepWg==}
+  /rollup-plugin-ts@3.4.5(rollup@3.29.1)(typescript@5.2.2):
+    resolution: {integrity: sha512-9iCstRJpEZXSRQuXitlSZAzcGlrqTbJg1pE4CMbEi6xYldxVncdPyzA2I+j6vnh73wBymZckerS+Q/iEE/M3Ow==}
     engines: {node: '>=16.15.1', npm: '>=7.0.0', pnpm: '>=3.2.0', yarn: '>=1.13'}
     peerDependencies:
       '@babel/core': '>=7.x'
@@ -1435,7 +1435,7 @@ packages:
       '@swc/helpers':
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.4(rollup@3.28.1)
+      '@rollup/pluginutils': 5.0.4(rollup@3.29.1)
       '@wessberg/stringutil': 1.0.19
       ansi-colors: 4.1.3
       browserslist: 4.21.10
@@ -1443,14 +1443,14 @@ packages:
       compatfactory: 3.0.0(typescript@5.2.2)
       crosspath: 2.0.0
       magic-string: 0.30.3
-      rollup: 3.28.1
+      rollup: 3.29.1
       ts-clone-node: 3.0.0(typescript@5.2.2)
       tslib: 2.6.2
       typescript: 5.2.2
     dev: true
 
-  /rollup@3.28.1:
-    resolution: {integrity: sha512-R9OMQmIHJm9znrU3m3cpE8uhN0fGdXiawME7aZIpQqvpS/85+Vt1Hq1/yVIcYfOmaQiHjvXkQAoJukvLpau6Yw==}
+  /rollup@3.29.1:
+    resolution: {integrity: sha512-c+ebvQz0VIH4KhhCpDsI+Bik0eT8ZFEVZEYw0cGMVqIP8zc+gnwl7iXCamTw7vzv2MeuZFZfdx5JJIq+ehzDlg==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -1574,20 +1574,20 @@ packages:
       typescript: 5.2.2
     dev: true
 
-  /ts-project-builder@0.9.1(esbuild@0.19.2):
-    resolution: {integrity: sha512-oDZIBnzSFu1No2WhQaE0uBbRwp0cr609JysZr+HYmJnrx79WRELYfo7v62dkL3bBvh5/A3Bx2CSCqUGN4vr4yQ==}
+  /ts-project-builder@1.0.1(esbuild@0.19.2):
+    resolution: {integrity: sha512-V/9h5C0/Sg9Kn1yAXpTR2MZaNYGkVVJS3BiAicX3fPBvaKP0PxssgRekW9+f8tR2SCmlF4LY4394GONAqKg1Cg==}
     engines: {node: '>=16.15.1'}
     hasBin: true
     dependencies:
-      '@rollup/plugin-json': 6.0.0(rollup@3.28.1)
-      '@rollup/plugin-strip': 3.0.2(rollup@3.28.1)
+      '@rollup/plugin-json': 6.0.0(rollup@3.29.1)
+      '@rollup/plugin-strip': 3.0.2(rollup@3.29.1)
       cleye: 1.3.2
       colorette: 2.0.20
       pretty-ms: 8.0.0
-      rollup: 3.28.1
-      rollup-plugin-esbuild: 5.0.0(esbuild@0.19.2)(rollup@3.28.1)
-      rollup-plugin-node-externals: 6.1.1(rollup@3.28.1)
-      rollup-plugin-ts: 3.4.4(rollup@3.28.1)(typescript@5.2.2)
+      rollup: 3.29.1
+      rollup-plugin-esbuild: 5.0.0(esbuild@0.19.2)(rollup@3.29.1)
+      rollup-plugin-node-externals: 6.1.1(rollup@3.29.1)
+      rollup-plugin-ts: 3.4.5(rollup@3.29.1)(typescript@5.2.2)
       typescript: 5.2.2
     transitivePeerDependencies:
       - '@babel/core'
