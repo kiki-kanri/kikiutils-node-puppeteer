@@ -31,7 +31,7 @@
   "devDependencies": {
     "@kikiutils/tsconfigs": "^0.2.1",
     "@types/node": "^20.5.7",
-    "ts-project-builder": "^0.7.0",
+    "ts-project-builder": "^0.9.0",
     "typescript": "^5.2.2"
   },
   "keywords": [

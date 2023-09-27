@@ -26,8 +26,8 @@ devDependencies:
     specifier: ^20.5.7
     version: 20.5.7
   ts-project-builder:
-    specifier: ^0.7.0
-    version: 0.7.0(esbuild@0.19.2)
+    specifier: ^0.9.0
+    version: 0.9.1(esbuild@0.19.2)
   typescript:
     specifier: ^5.2.2
     version: 5.2.2
@@ -1574,8 +1574,9 @@ packages:
       typescript: 5.2.2
     dev: true
 
-  /ts-project-builder@0.7.0(esbuild@0.19.2):
-    resolution: {integrity: sha512-KcSaj38DTlqgQL2eRN77fTsGnjjSudpGLXgBxR8jRTqoc+neesO6TpHlVDN1/1qWVyj0rtB/AZhBAVjZ9xJhig==}
+  /ts-project-builder@0.9.1(esbuild@0.19.2):
+    resolution: {integrity: sha512-oDZIBnzSFu1No2WhQaE0uBbRwp0cr609JysZr+HYmJnrx79WRELYfo7v62dkL3bBvh5/A3Bx2CSCqUGN4vr4yQ==}
+    engines: {node: '>=16.15.1'}
     hasBin: true
     dependencies:
       '@rollup/plugin-json': 6.0.0(rollup@3.28.1)
