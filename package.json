@@ -29,6 +29,7 @@
     "puppeteer-extra-plugin-stealth": "^2.11.2"
   },
   "devDependencies": {
+    "@kikiutils/prettierrc": "^1.0.4",
     "@kikiutils/tsconfigs": "^1.0.0",
     "@types/node": "^20.8.10",
     "ts-project-builder": "^2.0.1",
@@ -42,5 +43,6 @@
   ],
   "engines": {
     "node": ">=16.3.0"
-  }
+  },
+  "prettier": "@kikiutils/prettierrc"
 }
